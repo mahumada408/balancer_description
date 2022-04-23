@@ -1,0 +1,9 @@
+    {
+        "documentId": "e719ec6b12e0fafd4e5274b0",
+        "robotName": "balancer",
+        "assemblyName": "sim_model",
+        "outputFormat": "urdf",
+        "addDummyBaseLink": "true",
+        "mergeSTLs": "no",
+        "packageName": "balancer_description/meshes/"
+    }

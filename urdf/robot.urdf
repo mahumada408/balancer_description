@@ -1,0 +1,133 @@
+<robot name="balncer">
+   <link name="base_link">
+   </link>
+   <joint name="base_link_to_base" type="fixed">
+      <parent link="base_link"/>
+      <child link="bottom_part" />
+      <origin rpy="0.0 0 0" xyz="0 0 0.25"/>
+   </joint>
+   <link name="bottom_part">
+   <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/bottom_part.stl"/>
+      </geometry>
+      <material name="bottom_part_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </visual>
+   <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/bottom_part.stl"/>
+      </geometry>
+      <material name="bottom_part_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </collision>
+   <inertial>
+      <origin xyz="6.06632e-08 0.00185444 -0.0872894" rpy="0 0 0"/>
+      <mass value="0.597423" />
+      <inertia ixx="0.00157285" ixy="-8.14813e-10"  ixz="2.4105e-09" iyy="0.0021969" iyz="-2.0712e-06" izz="0.000864406" />
+   </inertial>
+   </link>
+   <joint name="wheel" type="revolute">
+      <origin xyz="-0.097 3.46945e-18 -0.1625" rpy="1.5708 -0 1.5708" />
+      <parent link="bottom_part" />
+      <child link="wheel" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" lower="-6.28319" upper="6.28319"/>
+      <joint_properties friction="0.0"/>
+   </joint>
+   <link name="wheel">
+   <visual>
+      <origin xyz="-1.90117e-19 0 -0.004" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </visual>
+   <collision>
+      <origin xyz="-1.90117e-19 0 -0.004" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </collision>
+   <inertial>
+      <origin xyz="-2.30859e-18 1.31473e-06 -0.004" rpy="0 0 0"/>
+      <mass value="0.0231244" />
+      <inertia ixx="1.18448e-05" ixy="4.43851e-52"  ixz="-7.29994e-38" iyy="2.3458e-05" iyz="-2.83325e-68" izz="1.18449e-05" />
+   </inertial>
+   </link>
+   <joint name="wheel_2" type="revolute">
+      <origin xyz="0.105 3.46945e-18 -0.1625" rpy="1.5708 -3.05459e-48 1.5708" />
+      <parent link="bottom_part" />
+      <child link="wheel_2" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" lower="-6.28319" upper="6.28319"/>
+      <joint_properties friction="0.0"/>
+   </joint>
+   <link name="wheel_2">
+   <visual>
+      <origin xyz="-1.90117e-19 0 -0.004" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </visual>
+   <collision>
+      <origin xyz="-1.90117e-19 0 -0.004" rpy="-1.5708 -1.5708 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </collision>
+   <inertial>
+      <origin xyz="-2.30859e-18 1.31473e-06 -0.004" rpy="0 0 0"/>
+      <mass value="0.0231244" />
+      <inertia ixx="1.18448e-05" ixy="1.7582e-69"  ixz="0" iyy="2.3458e-05" iyz="0" izz="1.18449e-05" />
+   </inertial>
+   </link>
+   <link name="top_part">
+   <visual>
+      <origin xyz="0.0159553 0.0075 0.015" rpy="3.14159 -1.34133e-16 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/top_part.stl"/>
+      </geometry>
+      <material name="top_part_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </visual>
+   <collision>
+      <origin xyz="0.0159553 0.0075 0.015" rpy="3.14159 -1.34133e-16 0" />
+      <geometry>
+         <mesh filename="package://balancer_description/meshes/top_part.stl"/>
+      </geometry>
+      <material name="top_part_material">
+         <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+   </collision>
+   <inertial>
+      <origin xyz="0.0140618 0.00252646 -0.0562488" rpy="0 0 0"/>
+      <mass value="0.159859" />
+      <inertia ixx="0.000353364" ixy="-7.57118e-07"  ixz="5.53838e-06" iyy="0.000380108" iyz="2.08197e-05" izz="8.90978e-05" />
+   </inertial>
+   </link>
+   <joint name="topfix" type="fixed">
+      <origin xyz="-0.017061 0.00182142 0.015" rpy="3.14159 -0 0" />
+      <parent link="bottom_part" />
+      <child link="top_part" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+   </joint>
+</robot>
